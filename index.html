@@ -723,13 +723,17 @@
 
     <script>
         function openMap() {
-            const mapContainer = document.querySelector('.map-container');
-            mapContainer.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                mapContainer.style.transform = 'scale(1)';
-                alert('🗺️ Mở Google Maps...\n📍 169 Tây Sơn, Đống Đa, Hà Nội');
-            }, 150);
-        }
+    const mapContainer = document.querySelector('.map-container');
+    mapContainer.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        mapContainer.style.transform = 'scale(1)';
+        alert('🗺️ Đang mở Google Maps...\n📍 169 Tây Sơn, Đống Đa, Hà Nội');
+
+        // Mở Google Maps với địa chỉ
+        const address = encodeURIComponent('169 Tây Sơn, Đống Đa, Hà Nội');
+        window.open(`https://www.google.com/maps?q=${address}`, '_blank');
+    }, 150);
+}
 
         // Tạo floating hearts
         function createFloatingHeart() {
